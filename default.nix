@@ -17,7 +17,7 @@
     in
     {
       # rename hostname to starfield :)
-      nixosConfigurations = {
+      self.nixosConfigurations = {
         "${hostname}" = lib.nixosSystem {
           inherit system;
           modules = [
