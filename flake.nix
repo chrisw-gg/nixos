@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }@inputs:
+  outputs = inputs @ { self, nixpkgs }:
     let
       system = "x86_64-linux";
       pkgs = import inputs.nixpkgs {
@@ -16,18 +16,13 @@
     in
     {
 
-      nixosConfigurations.<system> = nixpkgs.lib.nixosSystem {
-        inherit system;
+      yui = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         modules = [
-          ./hardware-configuration.nyx
+          ./hardware-configuration.nix
         ];
-      };
 
-      nixosConfigurations = {
-        inherit system;
-        modules = [
-          ./hardware-configuration.nyx
-        ];
+        # specialArgs.flake-inputs = inputs;
       };
 
     };
