@@ -16,6 +16,7 @@
       lib       = nixpkgs.lib;
     in
     {
+      abc = "test";
       # rename hostname to starfield :)
       nixosConfigurations.nyx = lib.nixosSystem {
           inherit system;
