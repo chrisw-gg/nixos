@@ -16,17 +16,14 @@
     in
     {
 
-    # rename hostname to starfield :)
-    nixosConfigurations = {
-      nyx = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hardware-configuration.nix
-        ];
-      };
-    };
-
-        # specialArgs.flake-inputs = inputs;
+      # rename hostname to starfield :)
+      nixosConfigurations = {
+        nyx = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hardware-configuration.nix
+          ];
+        };
       };
 
     };
