@@ -9,7 +9,7 @@
   outputs = inputs @ { self, nixpkgs }:
     let
       system = "x86_64-linux";
-      packages = import inputs.nixpkgs {
+      pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
