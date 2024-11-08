@@ -17,14 +17,12 @@
     in
     {
       # rename hostname to starfield :)
-      nixosConfigurations = {
-        "nyx" = lib.nixosSystem {
+      nixosConfigurations.nyx = lib.nixosSystem {
           inherit system;
           modules = [
             ./configuration.nix
           ];
         };
-      };
 
     };
 }
