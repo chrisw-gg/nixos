@@ -8,17 +8,18 @@
 
   outputs = inputs @ { self, nixpkgs }:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      # Linux Architecture
+      # System Options: [ "aarch64-linux" "x86_64-linux" ]
+      system    = "x86_64-linux";
+      hostname  = "nyx";
+      pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; };
+      lib       = nixpkgs.lib;
     in
     {
 
       # rename hostname to starfield :)
       nixosConfigurations = {
-        nyx = nixpkgs.lib.nixosSystem {
+        "${hostname}" = lib.nixosSystem {
           inherit system;
           modules = [
             ./hardware-configuration.nix
