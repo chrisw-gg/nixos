@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs @ { self, nixpkgs }:
+  outputs = { self, nixpkgs }@inputs:
     let
       # Linux Architecture
       # System Options: [ "aarch64-linux" "x86_64-linux" ]
