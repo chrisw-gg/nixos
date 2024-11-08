@@ -16,6 +16,13 @@
     in
     {
 
+      nixosConfigurations.<system> = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [
+          ./hardware-configuration.nyx
+        ];
+      };
+
       nixosConfigurations = {
         inherit system;
         modules = [
