@@ -1,30 +1,46 @@
-# https://github.com/BirdeeHub/birdeeSystems/blob/a109d8bfa0bdfbfb205cfb196915d1e8f630c7b2/flake.nix#L75
+# https://discourse.nixos.org/t/how-to-include-other-peoples-flakes-in-your-config/34295/2
+# This one is a beauty:
+# https://github.com/amz-x/dotnix/blob/master/flake.nix
+# sudo nixos-rebuild switch --flake ./#AMZ-Linux
+# https://www.reddit.com/r/NixOS/comments/1adfw25/using_the_user_environment_variable_in_nix_flake/
 {
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    mydesktops.url = "github:syke-dev/nixos";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs }@inputs:
-    let
-      # Linux Architecture
-      # System Options: [ "aarch64-linux" "x86_64-linux" ]
-      system    = "x86_64-linux";
-      hostname  = "nyx";
-      pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; };
-      lib       = nixpkgs.lib;
+
+  # Flake outputs
+  outputs = inputs @ { self, nixpkgs, mydesktops, nix-flatpak }: let
+    mydesktop = import mydesktops;
     in
     {
-      # rename hostname to starfield :)
-      nixosConfigurations = {
-        "${hostname}" = lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hardware-configuration.nix
-          ];
-        };
-      };
+      self = self;
+      nixpkgs = nixpkgs;
+      abc = mydesktop;
+      nixosConfigurations = mydesktop.outputs( {self=self; nixpkgs=nixpkgs;} );
+      #specialArgs = { inherit inputs; };
+      #  nixosConfigurations = (
+      #  import syke
+      #);
+      # specialArgs = { inherit inputs; };
+      # modules = [ syke ];
+      # Nix OS
+      #nixosConfigurations = (
+        #import syke {
+          #inherit (nixpkgs) lib;
+          # inherit inputs nixpkgs syke;
+       # }
+      #);
 
+      # Nix Darwin
+      # darwinConfigurations = (
+      #   import ./darwin {
+      #     inherit (nixpkgs) lib;
+      #     inherit inputs nixpkgs home-manager user location darwin;
+      #   }
+      # );
     };
 }
