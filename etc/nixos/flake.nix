@@ -11,11 +11,11 @@
   };
 
   outputs = { self, nixpkgs, mydesktops }@inputs:
-    let mydesktop = import mydesktops;
+    let # mydesktop = import mydesktops;
     in {
       a = "baz";
       c = "bar";
-      mine = mydesktop;
-      nixosConfigurations = mydesktop.outputs( {self=self; nixpkgs=nixpkgs;} );
+      # mine = mydesktop;
+      # nixosConfigurations = mydesktop.outputs( {self=self; nixpkgs=nixpkgs;} );
     };
 }
