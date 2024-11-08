@@ -1,3 +1,4 @@
+# https://github.com/BirdeeHub/birdeeSystems/blob/a109d8bfa0bdfbfb205cfb196915d1e8f630c7b2/flake.nix#L75
 {
   description = "Nixos config flake";
 
@@ -8,14 +9,19 @@
   outputs = { self, nixpkgs }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import inputs.nixpkgs {
+        inherit system overlays;
+        config.allowUnfree = true;
+      };
     in
     {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [ 
-            # ./configuration.nix
-          ];
-        };
+
+      nixosConfigurations = {
+        inherit system;
+        modules = [
+          ./hardware-configuration.nyx
+        ];
+      };
+
     };
 }
