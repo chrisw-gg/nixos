@@ -9,7 +9,7 @@
 
   outputs = { self, nixpkgs, nix-flatpak }@inputs:
     let
-      pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; };
+      pkgs      = import nixpkgs {  config.allowUnfree = true; };
       lib       = nixpkgs.lib;
     in
     {
