@@ -41,13 +41,7 @@
     isNormalUser = true;
     home = "/home/chris";
     extraGroups = ["wheel" "networkmanager"];
-    initialPassword = "hunter2";
   };
-
-  # Any packages that do not have a standard nix install (see programs below)
-  #environment.systemPackages = [
-  #  pkgs.discord
-  #];
 
   programs = {
   #  .chrome.enable = true;
@@ -55,18 +49,16 @@
     git.enable = true;
   };
 
-  #services.flatpak.packages = [
-  #  { appId = "com.brave.Browser"; origin = "flathub"; }
-  #  { appId = "com.discordapp.Discord"; }
-  #];
-
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
+  # rtkit is optional but recommended
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+  };
 
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?

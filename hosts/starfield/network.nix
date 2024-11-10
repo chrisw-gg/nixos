@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  networking.hostName = "nyx";
+  networking.hostName = "starfield";
   networking.networkmanager.enable = true;
 }
 

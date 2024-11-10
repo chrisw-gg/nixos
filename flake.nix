@@ -9,16 +9,12 @@
 
   outputs = { self, nixpkgs, nix-flatpak }@inputs:
     let
-      # Linux Architecture (TODO: Define in host)
-      system    = "x86_64-linux";
-      hostname  = "nyx";
       pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; };
       lib       = nixpkgs.lib;
     in
     {
-      # rename hostname to starfield :)
-      nixosConfigurations.nyx = lib.nixosSystem {
-          inherit system;
+      nixosConfigurations.starfield = lib.nixosSystem {
+          system = "x86_x64-linux";
           modules = [
             # auto pulls in flatpaks defined via services.flatpak.packages
             nix-flatpak.nixosModules.nix-flatpak
