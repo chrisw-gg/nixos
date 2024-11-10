@@ -21,7 +21,7 @@
       nixosConfigurations.nyx = lib.nixosSystem {
           inherit system;
           modules = [
-            ./hosts/sarfield/configuration.nix
+            ./hosts/starfield/configuration.nix
           ];
         };
 
