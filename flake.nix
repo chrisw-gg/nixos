@@ -20,10 +20,10 @@
       nixosConfigurations.nyx = lib.nixosSystem {
           inherit system;
           modules = [
-            ./hosts/starfield/configuration.nix
-
             # auto pulls in flatpaks defined via services.flatpak.packages
             nix-flatpak.nixosModules.nix-flatpak
+
+            ./hosts/starfield/configuration.nix
           ];
         };
 
