@@ -4,24 +4,26 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs }@inputs:
+  outputs = { self, nixpkgs, nix-flatpak }@inputs:
     let
-      # Linux Architecture
-      # System Options: [ "aarch64-linux" "x86_64-linux" ]
+      # Linux Architecture (TODO: Define in host)
       system    = "x86_64-linux";
       hostname  = "nyx";
       pkgs      = import nixpkgs { inherit system; config.allowUnfree = true; };
       lib       = nixpkgs.lib;
     in
     {
-      abc = "test";
       # rename hostname to starfield :)
       nixosConfigurations.nyx = lib.nixosSystem {
           inherit system;
           modules = [
             ./hosts/starfield/configuration.nix
+
+            # auto pulls in flatpaks defined via services.flatpak.packages
+            nix-flatpak.nixosModules.nix-flatpak
           ];
         };
 

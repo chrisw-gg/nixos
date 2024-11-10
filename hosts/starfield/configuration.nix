@@ -5,17 +5,15 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./network.nix
+    ./flatpak.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nyx";
-  networking.networkmanager.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -36,13 +34,6 @@
     desktopManager.plasma6 = {
       enable = true;
     };
-
-    #flatpak {
-    #  enable = true;
-    #  packages = [
-    #    "com.discordapp.Discord"
-    #  ];
-    #};
 
   };
  
