@@ -1,6 +1,6 @@
 { config, lib, pkgs, fetchFromGitHub, rustPlatform, ... }:
 
-rustPlatform.buildRustPackage rec {
+pkgs.rustPlatform.buildRustPackage rec {
 
   src = fetchFromGitHub {
     owner = "Nortank12";
