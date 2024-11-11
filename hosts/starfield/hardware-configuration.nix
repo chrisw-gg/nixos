@@ -27,10 +27,10 @@
   };
 
   # sda1
-  fileSystems."/home/nebula" = {
-    device = "/dev/disk/by-uuid/d14a8f16-515d-490a-951f-7820080db26b";
-    fsType = "ext4";
-  };
+  #fileSystems."/home/nebula" = {
+  #  device = "/dev/disk/by-uuid/d14a8f16-515d-490a-951f-7820080db26b";
+  #  fsType = "ext4";
+  #};
 
   swapDevices = [ ];
 
