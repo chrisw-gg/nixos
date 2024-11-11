@@ -49,9 +49,11 @@
     git.enable = true;
   };
 
-  environment.systemPackages = [
-    pkgs.qemu
-    pkgs.qemu_kvm
+  # packages are linked in /run/current-system/sw/bin/ to /nix/store
+  environment.systemPackages = with pkgs; [
+    qemu
+    qemu_kvm
+    quickemu
   ];
 
   # rtkit is optional but recommended
