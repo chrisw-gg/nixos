@@ -28,7 +28,7 @@
     rustc
     cargo
 
-    (callPackage ./deepcool.nix {})
+    # (callPackage ./deepcool.nix {})
   ];
 
 }
