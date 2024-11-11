@@ -19,7 +19,7 @@
 
   # enable kdump
   # on system crash a backup kernel will be booted to process the error
-  options.boot.crashDump = {
+  boot.crashDump = {
     enable = true;
     reservedMemory = "128M";
   };
