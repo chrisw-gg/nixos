@@ -2,10 +2,6 @@
 
 {
 
-  # use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   # enable kdump
   # on system crash a backup kernel will be booted to process the error
   options.boot.crashDump = {
