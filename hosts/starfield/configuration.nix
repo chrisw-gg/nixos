@@ -11,6 +11,7 @@
     ./system.nix
     ./network.nix
     ./packages.nix
+    ./deepcool.nix
   ];
 
   # use the systemd-boot EFI boot loader.
