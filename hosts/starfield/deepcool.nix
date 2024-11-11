@@ -1,6 +1,6 @@
 { config, lib, pkgs, fetchFromGitHub, rustPlatform, ... }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   pname = "deepcool";
   version = "v0.5.2-alpha";
 
