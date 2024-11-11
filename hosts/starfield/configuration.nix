@@ -49,6 +49,11 @@
     git.enable = true;
   };
 
+  environment.systemPackages = [
+    pkgs.qemu
+    pkgs.qemu_kvm
+  ];
+
   # rtkit is optional but recommended
   security.rtkit.enable = true;
   services.pipewire = {
