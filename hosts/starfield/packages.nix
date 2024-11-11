@@ -27,9 +27,11 @@
 
     rustc
     cargo
-
-    deepcool = callPackage ./deepcool.nix { };
   ];
+
+  environment.systemPackages = with pkgs; {
+    deepcool = callPackage ./deepcool.nix { };
+  };
 
 }
 
