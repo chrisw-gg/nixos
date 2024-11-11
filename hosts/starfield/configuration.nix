@@ -7,13 +7,10 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./system.nix
     ./network.nix
     ./flatpak.nix
   ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -43,6 +40,11 @@
     extraGroups = ["wheel" "networkmanager"];
   };
 
+  users.users.nebula = {
+    isNormalUser = true;
+    home = "/home/nebula";
+  };
+
   programs = {
   #  .chrome.enable = true;
     firefox.enable = true;
@@ -56,17 +58,6 @@
     qemu_kvm
     quickemu
   ];
-
-  # rtkit is optional but recommended
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
 
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
