@@ -11,8 +11,8 @@ rustPlatform.buildRustPackage {
     # hash = "sha256-+s5RBC3XSgb8omTbUNLywZnP6jSxZBKSS1BmXOjRF8M=";
   };
 
-  # cargoHash = "sha256-jtBw4ahSl88L0iuCXxQgZVm1EcboWRJMNtjxLVTtzts=";
-  cargoHash = lib.fakeHash;
+  cargoHash = "sha256-4pPJzQg0fpX/Sy73E+DTNtUcojYNA1ZnbWybRPLr7RY=";
+  # cargoHash = lib.fakeHash;
 
   meta = {
     description = "DeepCool digital display controller";
