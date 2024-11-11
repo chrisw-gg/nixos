@@ -20,9 +20,13 @@
   # packages are linked in /run/current-system/sw/bin/ to /nix/store
   environment.systemPackages = with pkgs; [
     gparted
+
     qemu
     qemu_kvm
     quickemu
+
+    rustc
+    cargo
   ];
 
 }

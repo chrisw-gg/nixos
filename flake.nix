@@ -7,13 +7,14 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, nix-flatpak }@inputs:
+  outputs = { self, nixpkgs, nix-flatpak }:
     let
-      pkgs      = import nixpkgs {  config.allowUnfree = true; };
-      lib       = nixpkgs.lib;
+      pkgs = import nixpkgs {
+        config.allowUnfree = true;
+      };
     in
     {
-      nixosConfigurations.starfield = lib.nixosSystem {
+      nixosConfigurations.starfield = nixpkgs.lib.nixosSystem {
           system = "x86_x64-linux";
           modules = [
             # auto pulls in flatpaks defined via services.flatpak.packages
