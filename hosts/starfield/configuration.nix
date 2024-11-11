@@ -10,7 +10,7 @@
     ./hardware-configuration.nix
     ./system.nix
     ./network.nix
-    ./flatpak.nix
+    ./packages.nix
   ];
 
   # use the systemd-boot EFI boot loader.
