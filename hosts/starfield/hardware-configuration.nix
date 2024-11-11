@@ -4,25 +4,33 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
   boot.initrd.availableKernelModules = [ "nvme" "ahci" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d76b1d33-2728-4eef-90eb-0d935c063b15";
-      fsType = "ext4";
-    };
+  # nvme0n1p1
+  # nvme0n1p2 is swap (TODO: Why is it not in swapDevices?)
+  # nvme0n1p3
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/d76b1d33-2728-4eef-90eb-0d935c063b15";
+    fsType = "ext4";
+  };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/0D07-9D54";
+    fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" ];
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/0D07-9D54";
-      fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
-    };
+  # sda1
+  fileSystems."/home/" = {
+    device = "/dev/disk/by-uuid/d14a8f16-515d-490a-951f-7820080db26b";
+    fsType = "ext4";
+  };
 
   swapDevices = [ ];
 
