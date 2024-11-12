@@ -28,6 +28,8 @@
     rustc
     cargo
 
+    memtest86plus
+
     # (callPackage ./deepcool.nix {})
   ];
 
