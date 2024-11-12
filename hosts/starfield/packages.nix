@@ -28,7 +28,7 @@
     rustc
     cargo
 
-    lm-sensors
+    Lm-sensors
 
     # (callPackage ./deepcool.nix {})
   ];
