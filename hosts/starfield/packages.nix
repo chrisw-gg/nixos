@@ -28,7 +28,7 @@
     rustc
     cargo
 
-    memtest86plus
+    lm-sensors
 
     # (callPackage ./deepcool.nix {})
   ];
