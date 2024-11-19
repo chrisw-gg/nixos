@@ -17,6 +17,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   # enable kdump
   # on system crash a backup kernel will be booted to process the error
   boot.crashDump = {
