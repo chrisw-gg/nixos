@@ -30,10 +30,11 @@
   hardware.nvidia = {
     # Modesetting is required???
     modesetting.enable = true;
-    # Use the NVidia open source kernel module
-    open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
     
+    # Use the NVidia open source kernel module
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    open = false;
+
     # Enable the Nvidia settings menu, accessible via 'nvidia-settings'
     nvidiaSettings = true;
     
@@ -41,7 +42,7 @@
       enable = true;
       finegrained = true;
     };
-  }
+  };
 
   # rtkit is optional but recommended
   security.rtkit.enable = true;
