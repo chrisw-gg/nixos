@@ -31,6 +31,7 @@
 
     lm_sensors
 
+    python3
     # (callPackage ./deepcool.nix {})
   ];
 
