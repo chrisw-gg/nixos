@@ -4,9 +4,14 @@
 
   services.flatpak.enable = true;
   services.flatpak.packages = [
-    # "org.mozilla.firefox"
+    # general
     "com.discordapp.Discord"
     "com.valvesoftware.Steam"
+    "org.mozilla.firefox"
+    # dev
+    "com.axosoft.GitKraken"
+    "com.visualstudio.code"
+    # system
     "com.github.tchx84.Flatseal"
   ];
 
