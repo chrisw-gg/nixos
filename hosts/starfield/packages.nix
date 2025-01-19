@@ -15,6 +15,7 @@
     "com.visualstudio.code"
     # system
     "com.github.tchx84.Flatseal"
+    "org.gnome.baobab" # disk usage anyalzyer
   ];
 
   # software in nixpkgs
@@ -27,6 +28,7 @@
 
   # packages are linked in /run/current-system/sw/bin/ to /nix/store
   environment.systemPackages = with pkgs; [
+    fastfetch
     gparted
 
     qemu
