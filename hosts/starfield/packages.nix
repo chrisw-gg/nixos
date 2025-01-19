@@ -10,6 +10,8 @@
     "org.mozilla.firefox"
     # dev
     "com.axosoft.GitKraken"
+    "com.jetbrains.Rider"
+    "com.unity.UnityHub"
     "com.visualstudio.code"
     # system
     "com.github.tchx84.Flatseal"
