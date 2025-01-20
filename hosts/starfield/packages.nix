@@ -12,6 +12,7 @@
     "com.axosoft.GitKraken"
     "com.jetbrains.Rider"
     "com.unity.UnityHub"
+    "dev.vencord.vesktop" # alternative discord
     "com.visualstudio.code"
     # system
     "com.github.tchx84.Flatseal"
