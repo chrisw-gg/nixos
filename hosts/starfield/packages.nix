@@ -12,11 +12,12 @@
     "com.axosoft.GitKraken"
     "com.jetbrains.Rider"
     "com.unity.UnityHub"
-    "dev.vencord.Vesktop" # alternative discord
     "com.visualstudio.code"
+    "dev.vencord.Vesktop"            # alternative discord
+    "org.gnome.Connections"          # remote desktop
     # system
     "com.github.tchx84.Flatseal"
-    "org.gnome.baobab" # disk usage anyalzyer
+    "org.gnome.baobab"               # disk usage anyalzyer
   ];
 
   # software in nixpkgs
