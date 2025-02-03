@@ -46,5 +46,14 @@
     # (callPackage ./deepcool.nix {})
   ];
 
+  # enable Docker (rootless)
+  virtualisation.docker {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    }
+  }
+
 }
 
