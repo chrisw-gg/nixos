@@ -18,6 +18,7 @@
     # system
     "com.github.tchx84.Flatseal"
     "org.gnome.baobab"               # disk usage anyalzyer
+    "org.gnome.Logs"
   ];
 
   # software in nixpkgs
