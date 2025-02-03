@@ -47,13 +47,13 @@
   ];
 
   # enable Docker (rootless)
-  virtualisation.docker {
+  virtualisation.docker = {
     enable = true;
     rootless = {
       enable = true;
       setSocketVariable = true;
-    }
-  }
+    };
+  };
 
 }
 
