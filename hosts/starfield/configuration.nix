@@ -30,12 +30,9 @@
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
-    # Modesetting is required???
-    modesetting.enable = true;
-    
-    # Use the NVidia open source kernel module
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    open = false;
+    # Use the latest open source kernel module
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+    open = true;
 
     # Enable the Nvidia settings menu, accessible via 'nvidia-settings'
     nvidiaSettings = true;
