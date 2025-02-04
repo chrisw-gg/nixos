@@ -44,6 +44,8 @@
 
     python3
     # (callPackage ./deepcool.nix {})
+
+    awscli2
   ];
 
   # enable Docker (rootless)
