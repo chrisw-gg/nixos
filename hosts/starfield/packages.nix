@@ -5,6 +5,7 @@
   services.flatpak.enable = true;
   services.flatpak.packages = [
     # general
+    "org.chromium.Chromium"
     "com.discordapp.Discord"
     "com.valvesoftware.Steam"
     "org.mozilla.firefox"
@@ -24,8 +25,6 @@
   # software in nixpkgs
   # packages that are not nix 'native' need to be installed as regular system packages below
   programs = {
-    # chrome.enable = true;
-    firefox.enable = true;
     git.enable = true;
   };
 
