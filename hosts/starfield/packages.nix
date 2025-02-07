@@ -50,9 +50,6 @@
 
     podman-tui
     podman-compose
-
-    # Uncomplicated Firewall 
-    ufw
   ];
 
   virtualisation = {
