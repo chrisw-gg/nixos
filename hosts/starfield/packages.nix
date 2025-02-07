@@ -15,6 +15,7 @@
     "com.unity.UnityHub"
     "com.visualstudio.code"
     "dev.vencord.Vesktop"            # alternative discord
+    "io.podman_desktop.PodmanDesktop"
     "org.gnome.Connections"          # remote desktop
     # system
     "com.github.tchx84.Flatseal"
