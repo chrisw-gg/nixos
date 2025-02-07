@@ -46,14 +46,19 @@
     # (callPackage ./deepcool.nix {})
 
     awscli2
+
+    podman-tui
+    podman-compose
   ];
 
-  # enable Docker (rootless)
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
+  virtualisation = {
+    # Enable common container config files in /etc/containers
+    containers.enable = true; 
+
+    podman = {
       enable = true;
-      setSocketVariable = true;
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
     };
   };
 
