@@ -12,7 +12,7 @@
       enable = true;
       allowedTCPPortRanges = [
         # Open a range of ports to use for locally hosted servers
-        { from = 8000; to = 9000; }
+        { from = 7000; to = 9000; }
       ];
     };
 
