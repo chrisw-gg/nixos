@@ -50,6 +50,8 @@
 
     podman-tui
     podman-compose
+
+    tcpdump
   ];
 
   virtualisation = {
