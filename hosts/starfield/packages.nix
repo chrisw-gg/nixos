@@ -33,25 +33,32 @@
   environment.systemPackages = with pkgs; [
     fastfetch
     gparted
+    lm_sensors
 
+    # (callPackage ./deepcool.nix {})
+    awscli2
+
+    # containers
+    podman-tui
+    podman-compose
+
+    # networking
+    dig
+    nslookup
+    tcpdump
+
+    # python
+    python3
+
+    # virtualisation
     qemu
     qemu_kvm
     quickemu
 
-    rustc
+    # rust
     cargo
+    rustc
 
-    lm_sensors
-
-    python3
-    # (callPackage ./deepcool.nix {})
-
-    awscli2
-
-    podman-tui
-    podman-compose
-
-    tcpdump
   ];
 
   virtualisation = {
