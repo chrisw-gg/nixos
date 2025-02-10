@@ -10,7 +10,7 @@
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [
+      allowedUDPPorts = [
         5353 # mDNS
       ];
       # Open a range of ports to use for locally hosted servers
