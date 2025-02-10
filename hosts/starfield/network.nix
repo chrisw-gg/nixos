@@ -25,11 +25,11 @@
   services.avahi = {
     enable = true;
     nssmdns = true;
+    openFirewall = false;
     publish = {
       enable = true;
       # register mDNS for all local IP addresses
       addresses = true;
-      openFirewall = false;
     };
   };
 
