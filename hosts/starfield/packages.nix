@@ -44,7 +44,6 @@
 
     # networking
     dig
-    nslookup
     tcpdump
 
     # python
