@@ -12,15 +12,16 @@
     # dev
     "com.axosoft.GitKraken"
     "com.jetbrains.Rider"
-    "com.parsecgaming.parsec"        # remote desktop
+    "com.parsecgaming.parsec"           # remote desktop
     "com.unity.UnityHub"
     "com.visualstudio.code"
-    "dev.vencord.Vesktop"            # alternative discord
+    "dev.vencord.Vesktop"               # alternative discord
+    "io.beekeeperstudio.Studio"         # sql editor
     "io.podman_desktop.PodmanDesktop"
-    "org.gnome.Connections"          # remote desktop
+    "org.gnome.Connections"             # remote desktop
     # system
     "com.github.tchx84.Flatseal"
-    "org.gnome.baobab"               # disk usage anyalzyer
+    "org.gnome.baobab"                  # disk usage anyalzyer
     "org.gnome.Logs"
   ];
 
