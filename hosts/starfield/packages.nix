@@ -12,6 +12,7 @@
     # dev
     "com.axosoft.GitKraken"
     "com.jetbrains.Rider"
+    "com.parsecgaming.parsec"        # remote desktop
     "com.unity.UnityHub"
     "com.visualstudio.code"
     "dev.vencord.Vesktop"            # alternative discord
