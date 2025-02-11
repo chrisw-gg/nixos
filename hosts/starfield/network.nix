@@ -21,15 +21,24 @@
 
   };
 
-  # mDNS service
+  # mDNS service (hostname.local)
   services.avahi = {
     enable = true;
     nssmdns = true;
     openFirewall = false;
     publish = {
       enable = true;
-      # register mDNS for all local IP addresses
       addresses = true;
+    };
+  };
+
+  services.cloudflared = {
+    enable = true;
+    tunnels = {
+      "00000000-0000-0000-0000-000000000000" = {
+        credentialsFile = "/root/.cloudflared/homelab.json";
+        default = "http_status:404";
+      };
     };
   };
 
