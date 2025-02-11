@@ -35,8 +35,8 @@
   services.cloudflared = {
     enable = true;
     tunnels = {
-      "00000000-0000-0000-0000-000000000000" = {
-        credentialsFile = "/etc/cloudflared/homelab.json";
+      "fc96a693-f680-4f9d-bf1e-18ca621797e4.json" = {
+        credentialsFile = "/etc/cloudflared/fc96a693-f680-4f9d-bf1e-18ca621797e4.json";
         default = "http_status:404";
       };
     };
