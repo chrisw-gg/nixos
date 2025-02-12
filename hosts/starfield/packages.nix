@@ -48,6 +48,9 @@
     dig
     tcpdump
 
+    # node
+    npm
+
     # python
     python3
 
