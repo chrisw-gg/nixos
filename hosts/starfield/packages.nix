@@ -48,8 +48,8 @@
     dig
     tcpdump
 
-    # node
-    npm
+    # nodejs (corepack node npm npx)
+    nodejs_23
 
     # python
     python3
