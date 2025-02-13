@@ -17,6 +17,7 @@
     "com.visualstudio.code"
     "dev.vencord.Vesktop"               # alternative discord
     "io.beekeeperstudio.Studio"         # sql editor
+    "io.github.shiftey.Desktop"         # GitHub Desktop
     "io.podman_desktop.PodmanDesktop"
     "org.gnome.Connections"             # remote desktop
     # system
@@ -34,7 +35,6 @@
   # packages are linked in /run/current-system/sw/bin/ to /nix/store
   environment.systemPackages = with pkgs; [
     fastfetch
-    gparted
     lm_sensors
 
     # (callPackage ./deepcool.nix {})
@@ -63,6 +63,9 @@
     cargo
     rustc
 
+    # general software
+    bcompare
+    gparted
   ];
 
   virtualisation = {
