@@ -11,6 +11,7 @@
     "org.mozilla.firefox"
     # dev
     "com.axosoft.GitKraken"
+    "com.google.AndroidStudio"          # Android Studio
     "com.jetbrains.Rider"
     "com.parsecgaming.parsec"           # remote desktop
     "com.unity.UnityHub"
