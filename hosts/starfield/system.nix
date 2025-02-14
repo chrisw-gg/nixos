@@ -24,7 +24,7 @@
     chris = {
       isNormalUser = true;
       home = "/home/chris";
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["adbusers" "networkmanager" "wheel"];
     };
 
     nebula = {

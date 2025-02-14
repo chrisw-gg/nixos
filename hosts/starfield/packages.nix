@@ -30,6 +30,7 @@
   # software in nixpkgs
   # packages that are not nix 'native' need to be installed as regular system packages below
   programs = {
+    adb.enable = true;
     git.enable = true;
   };
 
