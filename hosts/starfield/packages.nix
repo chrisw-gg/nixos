@@ -46,6 +46,7 @@
     ssm-session-manager-plugin
     
     # containers
+    kubectl
     podman-tui
     podman-compose
 
