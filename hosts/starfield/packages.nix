@@ -40,8 +40,11 @@
     lm_sensors
 
     # (callPackage ./deepcool.nix {})
-    awscli2
 
+    # aws
+    awscli2
+    ssm-session-manager-plugin
+    
     # containers
     podman-tui
     podman-compose
