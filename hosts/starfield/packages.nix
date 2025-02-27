@@ -32,6 +32,11 @@
   programs = {
     adb.enable = true;
     git.enable = true;
+
+    git {
+      enable = true;
+      lfs.enable = true;
+    }
   };
 
   # packages are linked in /run/current-system/sw/bin/ to /nix/store
