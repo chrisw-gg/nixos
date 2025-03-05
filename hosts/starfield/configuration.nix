@@ -17,6 +17,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/top-level/linux-kernels.nix
+  boot.kernelPackages = pkgs.linuxPackages_6_13;
+
   nixpkgs.config.allowUnfree = true;
 
   # enable kdump
