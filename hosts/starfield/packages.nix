@@ -65,6 +65,10 @@
     # python
     python3
 
+    # terraform
+    terraform
+    terragrunt
+
     # virtualisation
     qemu
     qemu_kvm
