@@ -58,6 +58,7 @@
     # networking
     dig
     tcpdump
+    httptoolkit
 
     # nodejs (corepack node npm npx)
     nodejs_23
