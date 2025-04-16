@@ -29,23 +29,6 @@
     reservedMemory = "128M";
   };
 
-  # Load nvidia driver for Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-    # Use the latest open source kernel module
-    package = config.boot.kernelPackages.nvidiaPackages.production;
-    open = true;
-
-    # Enable the Nvidia settings menu, accessible via 'nvidia-settings'
-    nvidiaSettings = true;
-    
-    powerManagement = {
-      # enable = true;
-      # finegrained = true;
-    };
-  };
-
   # rtkit is optional but recommended
   security.rtkit.enable = true;
   services.pipewire = {
